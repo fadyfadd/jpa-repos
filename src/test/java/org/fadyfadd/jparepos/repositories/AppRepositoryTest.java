@@ -22,7 +22,7 @@ public class AppRepositoryTest {
        Assert.isTrue((Double)values.get("random_value") > 0 , "not valid");
        List<CitiesByCountry> cities =  (List<CitiesByCountry>)values.get("payLoad");
        Assert.isTrue(cities.size() > 0 , "not valid");
-       Assert.isTrue((Integer)values.get("city_count") > 0 , "not not valid");
+       Assert.isTrue((Integer)values.get("city_count") > 0 , "not valid");
        
     }
 }
