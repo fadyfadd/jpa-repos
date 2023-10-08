@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ActorRepository extends JpaRepository<Actor,Integer> {
   
-    @Procedure(procedureName = "get_actor_count_by_movie")
-    public Integer GetActorCountByMovie(Integer movieId);
+    @Procedure(procedureName="get_actor_count_by_movie")
+    Integer GetActorCountByMovie(Integer movieId);
+
 }
