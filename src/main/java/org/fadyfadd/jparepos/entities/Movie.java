@@ -12,7 +12,7 @@ import lombok.Setter;
 import jakarta.persistence.Id;
 
 @Entity
-@Table(name = "movie")
+@Table(name = "film")
 @Setter
 @Getter
 public class Movie {
@@ -21,10 +21,10 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="film_id")
     Integer filmId;
-    @Column(name="description")
-    String description;
     @Column(name="title")
     String title;
+    @Column(name="description")
+    String description;
     @Column(name="release_year")
     Date releaseYear;
     @Column(name="language_id")
@@ -43,7 +43,4 @@ public class Movie {
     String specialFeatures;
     @Column(name="last_update")
     Date lastUpdate;
-
-
-
 }

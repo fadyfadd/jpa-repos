@@ -13,7 +13,7 @@ public class AppRepository {
     @Autowired
     EntityManager entityManager;
   
-    public Map<String,Object> GetCitiesByCountry(Integer countryId) {
+    public Map<String,Object> getCitiesByCountry(Integer countryId) {
         Map<String,Object> output = new HashMap<String,Object>();
         StoredProcedureQuery query = entityManager.createNamedStoredProcedureQuery("get_cities_by_country");
         query.setParameter("acity_id" , countryId);

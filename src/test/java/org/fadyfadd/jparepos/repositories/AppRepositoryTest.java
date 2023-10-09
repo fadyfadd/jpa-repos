@@ -16,8 +16,8 @@ public class AppRepositoryTest {
     @Test
     @SuppressWarnings("unchecked")
     @Transactional
-    void GetCitiesCountByCountry_1() {
-       Map<String,Object> values =  appRepository.GetCitiesByCountry(null);
+    void getCitiesCountByCountry_1() {
+       Map<String,Object> values =  appRepository.getCitiesByCountry(null);
        Assert.isTrue((Double)values.get("random_value") > 0 , "not valid");
        List<CitiesByCountry> cities =  (List<CitiesByCountry>)values.get("payLoad");
        Assert.isTrue(cities.size() > 0 , "not valid");
