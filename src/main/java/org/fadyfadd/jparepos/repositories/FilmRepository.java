@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface FilmRepository extends JpaRepository<Film,Integer> {
   
-    @Procedure(procedureName = "get_movies_by_release_year")
+    @Procedure(procedureName = "get_films_by_release_year")
     public List<Object> getFilmsByReleaseDate(Integer releaseDate);
 
     @Query("select m from Film m where title like %:pattern%")
