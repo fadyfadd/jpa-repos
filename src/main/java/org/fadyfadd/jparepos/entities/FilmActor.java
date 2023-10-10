@@ -11,13 +11,13 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="film_actor")
-public class MovieActor {
+public class FilmActor {
     @EmbeddedId
     @AttributeOverrides({
         @AttributeOverride(name="actorId" , column=@Column(name="actor_id")),
-        @AttributeOverride(name="movieId" , column=@Column(name="movie_id"))
+        @AttributeOverride(name="filmId" , column=@Column(name="film_id"))
     })
-    MovieActorPrimaryKey filmActorPk;
+    FilmActorPrimaryKey filmActorPk;
     @Column(name = "last_update")
     Date lastUpdate;
 }

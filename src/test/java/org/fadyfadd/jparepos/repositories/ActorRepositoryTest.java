@@ -18,8 +18,8 @@ public class ActorRepositoryTest {
 
   @Test
   @Transactional
-  void getActorCountByMovie_1() {
-    int nbrOfActors = actorRepository.getActorCountByMovie(null);
+  void getActorCountByFilm_1() {
+    int nbrOfActors = actorRepository.getActorCountByFilm(null);
     Assert.isTrue(nbrOfActors > 0, "non valid");
   }
 

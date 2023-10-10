@@ -15,7 +15,7 @@ import jakarta.persistence.Id;
 @Table(name = "film")
 @Setter
 @Getter
-public class Movie {
+public class Film {
     
     @Id()
     @GeneratedValue(strategy = GenerationType.AUTO)

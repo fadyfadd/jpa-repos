@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 public class InventoryStatusDto {
     Integer inventoryId;
-    String movieId;
-    String movieDescription;
-    String movieTitle;
+    String filmId;
+    String filmDescription;
+    String filmTitle;
 }

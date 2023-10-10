@@ -7,7 +7,7 @@ import lombok.Setter;
 @Embeddable
 @Getter
 @Setter
-public class MovieActorPrimaryKey {
+public class FilmActorPrimaryKey {
     private Integer actorId;
     private Integer filmId;
 }

@@ -2,7 +2,7 @@ package org.fadyfadd.jparepos.repositories;
 import java.util.List;
 import java.util.Map;
 
-import org.fadyfadd.jparepos.entities.ActorsByMovie;
+import org.fadyfadd.jparepos.entities.ActorsByFilm;
 import org.fadyfadd.jparepos.entities.CitiesByCountry;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,8 +29,8 @@ public class AppRepositoryTest {
 
     @Test
     @Transactional
-    void getActorsByMovie_1() {
-      List<ActorsByMovie> actors = appRepository.getActorsByMovie(1);
+    void getActorsByFilm_1() {
+      List<ActorsByFilm> actors = appRepository.getActorsByFilm(1);
       Assert.isTrue(actors.size() > 0, "not valid");
     }
 }

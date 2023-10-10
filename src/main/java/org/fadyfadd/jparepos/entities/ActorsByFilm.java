@@ -7,17 +7,17 @@ import jakarta.persistence.NamedQuery;
 import lombok.AllArgsConstructor;
 
 @NamedQueries({
-    @NamedQuery(name="actors_by_movie" , 
-    query="select new ActorsByMovie(a.actorId , m.filmId , a.firstName , a.lastName , m.title , m.description)" + 
-    " from MovieActor  ma , Movie m , Actor a where ma.filmActorPk.actorId = a.actorId and ma.filmActorPk.filmId = m.filmId and m.filmId = :filmId"
+    @NamedQuery(name="actors_by_film" , 
+    query="select new ActorsByFilm(a.actorId , m.filmId , a.firstName , a.lastName , m.title , m.description)" + 
+    " from FilmActor  ma , Film m , Actor a where ma.filmActorPk.actorId = a.actorId and ma.filmActorPk.filmId = m.filmId and m.filmId = :filmId"
     )
 })
 @Entity
 @AllArgsConstructor
-public class ActorsByMovie {
+public class ActorsByFilm {
     @Id
     Integer actorId;
-    Integer movieId;
+    Integer filmId;
     String firstName;
     String lastName;
     String title;

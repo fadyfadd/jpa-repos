@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 public interface ActorRepository extends JpaRepository<Actor,Integer> {
   
     @Procedure(procedureName="get_actor_count_by_movie")
-    Integer getActorCountByMovie(Integer movieId);
+    Integer getActorCountByFilm(Integer filmId);
 
     @Query("select a from Actor a where lastName like %:pattern%")
     List<Actor> searchActorsByLastName( @Param("pattern") String lastNamePattern);

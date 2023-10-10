@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.fadyfadd.jparepos.entities.ActorsByMovie;
+import org.fadyfadd.jparepos.entities.ActorsByFilm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import jakarta.persistence.EntityManager;
@@ -27,9 +27,9 @@ public class AppRepository {
         return output;
     }
 
-    public List<ActorsByMovie> getActorsByMovie(Integer movieId) {
-       TypedQuery<ActorsByMovie> actors = entityManager.createNamedQuery("actors_by_movie", ActorsByMovie.class);
-       actors.setParameter("filmId" , movieId);
+    public List<ActorsByFilm> getActorsByFilm(Integer filmId) {
+       TypedQuery<ActorsByFilm> actors = entityManager.createNamedQuery("actors_by_film", ActorsByFilm.class);
+       actors.setParameter("filmId" , filmId);
        return actors.getResultList();
     }
 
