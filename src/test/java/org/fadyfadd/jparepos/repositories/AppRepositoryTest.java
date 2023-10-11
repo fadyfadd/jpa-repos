@@ -2,6 +2,7 @@ package org.fadyfadd.jparepos.repositories;
 import java.util.List;
 import java.util.Map;
 
+import org.fadyfadd.jparepos.datatransferobjects.InventoryStatusDto;
 import org.fadyfadd.jparepos.entities.ActorsByFilm;
 import org.fadyfadd.jparepos.entities.CitiesByCountry;
 import org.junit.jupiter.api.Test;
@@ -33,4 +34,13 @@ public class AppRepositoryTest {
       List<ActorsByFilm> actors = appRepository.getActorsByFilm(1);
       Assert.isTrue(actors.size() > 0, "not valid");
     }
+
+    @Test
+    @Transactional
+    void getInventoryStatusByFilmId_1(){
+      List<InventoryStatusDto> inventoryStatus = appRepository.getInventoryStatusByFilmId(1);
+      Assert.isTrue(inventoryStatus.size() > 0, "not valid");
+    }
+
+
 }
