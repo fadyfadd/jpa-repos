@@ -38,7 +38,7 @@ public class AppRepository {
         String queryText = "Select new org.fadyfadd.jparepos.datatransferobjects.InventoryStatusDto(i.inventoryId , f.filmId , f.description , f.title)" +
          " from Inventory i , Film f where i.filmId= f.filmId and (:filmId is null or f.filmId = :filmId) ";
         TypedQuery<InventoryStatusDto> query = entityManager.createQuery(queryText, InventoryStatusDto.class);
-        query.setParameter("filmId" , null);
+        query.setParameter("filmId" , filmId);
         List<InventoryStatusDto> inventoryStatus =  query.getResultList();
         return inventoryStatus;
     }
