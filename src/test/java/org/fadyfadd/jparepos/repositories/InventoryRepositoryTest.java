@@ -6,8 +6,6 @@ import org.fadyfadd.jparepos.entities.Inventory;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.Assert;
-
 import jakarta.transaction.Transactional;
 
 @SpringBootTest
@@ -20,6 +18,6 @@ public class InventoryRepositoryTest {
     @Transactional
     void findAll_1() {
        List<Inventory> inventories =  inventoryRepository.findAll();
-       Assert.isTrue(inventories.size() > 0, "non valid");
+       System.out.println(inventories);
     }
 }

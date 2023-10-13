@@ -5,12 +5,14 @@ import java.util.List;
 import java.util.Map;
 
 import org.fadyfadd.jparepos.datatransferobjects.InventoryStatusDto;
+import org.fadyfadd.jparepos.entities.Actor;
 import org.fadyfadd.jparepos.entities.ActorsByFilm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.StoredProcedureQuery;
 import jakarta.persistence.TypedQuery;
+ 
 
 @Repository
 public class AppRepository {
@@ -32,6 +34,11 @@ public class AppRepository {
         TypedQuery<ActorsByFilm> actors = entityManager.createNamedQuery("actors_by_film", ActorsByFilm.class);
         actors.setParameter("filmId", filmId);
         return actors.getResultList();
+    }
+
+    public Integer saveActor(Actor actor) {
+        entityManager.persist(actor);
+        return actor.getActorId();
     }
 
     public List<InventoryStatusDto> getInventoryStatusByFilmId(Integer filmId) {

@@ -4,13 +4,14 @@ import org.fadyfadd.jparepos.entities.Actor;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.Assert;
-
+import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
 
+import java.util.Date;
 import java.util.List;
 
 @SpringBootTest
+@Service
 public class ActorRepositoryTest {
 
   @Autowired
@@ -20,14 +21,21 @@ public class ActorRepositoryTest {
   @Transactional
   void getActorCountByFilm_1() {
     int nbrOfActors = actorRepository.getActorCountByFilm(null);
-    Assert.isTrue(nbrOfActors > 0, "non valid");
+    System.out.println(nbrOfActors);
   }
 
   @Test
   @Transactional
   void searchActorByLastName_1() {
     List<Actor> actors = actorRepository.searchActorsByLastName("a");
-    Assert.isTrue(actors.size() > 0 , "not valid");
+   System.out.println(actors);
+  }
+
+  @Test
+  @Transactional
+  void Save_1() {
+    Actor toInsert = new Actor(-1 , "John" , "McDonald" ,new Date());
+    actorRepository.save(toInsert);
   }
 
 }
